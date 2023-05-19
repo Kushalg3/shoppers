@@ -10,9 +10,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/smallLogo.ico" />
       </Head>
-      <main>
+      <main className="bg-lightBlue">
         <Navbar />
-        <Banner />
+        <div className="max-w-contentContainer mx-auto bg-white">
+          <Banner />
+        </div>
       </main>
     </>
   );
