@@ -7,7 +7,7 @@ import NavBarButton from "./NavBarButton";
 
 const Navbar = () => {
   return (
-    <div className="w-full bg-blue text-white">
+    <div className="w-full bg-blue text-white sticky top-0 z-50">
       {/* First row of Navbar section */}
 
       <div className="w-full h-full border-b-[1px] border-b-white">
