@@ -4,6 +4,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import { AiOutlineHeart, AiOutlineUser } from "react-icons/ai";
 import { BsCart2 } from "react-icons/bs";
 import NavBarButton from "./NavBarButton";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -14,9 +15,11 @@ const Navbar = () => {
         <div className="max-w-container mx-auto h-20 px-4 flex items-center justify-between gap-2">
           {/* Logo section */}
 
-          <div className="navBarHover">
-            <Image src={logo} className="w-44" alt="logo" />
-          </div>
+          <Link href={"/"}>
+            <div className="navBarHover">
+              <Image src={logo} className="w-44" alt="logo" />
+            </div>
+          </Link>
 
           {/* Department button */}
 
@@ -77,20 +80,21 @@ const Navbar = () => {
 
           {/* Cart Button */}
 
-          <div className="navBarHover relative flex-col justify-center items-center">
-            <BsCart2 className="text-2xl" />
-            <p className="text-[10px] -mt-2">$0.00</p>
-            <span className="absolute w-4 h-4 bg-yellow text-black top-0 right-4 rounded-full flex items-center justify-center font-bodyFont text-xs">
-              0
-            </span>
-          </div>
+          <Link href={"/cart"}>
+            <div className="navBarHover relative flex-col justify-center items-center">
+              <BsCart2 className="text-2xl" />
+              <p className="text-[10px] -mt-2">$0.00</p>
+              <span className="absolute w-4 h-4 bg-yellow text-black top-0 right-4 rounded-full flex items-center justify-center font-bodyFont text-xs">
+                0
+              </span>
+            </div>
+          </Link>
         </div>
       </div>
 
       {/* Second Row Navbar Buttons */}
 
       <NavBarButton />
-
     </div>
   );
 };

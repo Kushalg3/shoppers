@@ -1,6 +1,8 @@
 import Banner from "@/components/Banner";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Products from "@/components/Products";
+import TopFooter from "@/components/TopFooter";
 import { Product } from "@/type";
 import Head from "next/head";
 interface Props {
@@ -8,7 +10,6 @@ interface Props {
 }
 
 export default function Home({ productData }: Props) {
-  console.log(productData);
   return (
     <>
       <Head>
@@ -17,7 +18,6 @@ export default function Home({ productData }: Props) {
         <link rel="icon" href="/smallLogo.ico" />
       </Head>
       <main className="bg-lightBlue">
-        <Navbar />
         <div className="max-w-contentContainer mx-auto bg-white">
           <Banner />
           <Products productData={productData} />
