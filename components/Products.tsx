@@ -1,5 +1,6 @@
 import { Item, Product } from "@/type";
 import Image from "next/image";
+import Link from "next/link";
 import { BsStarFill } from "react-icons/bs";
 import { GoPlus } from "react-icons/go";
 
@@ -32,12 +33,30 @@ const Products = ({ productData }: Props) => {
                 </span>
                 Add
               </button>
-              <button className="w-24 h-9 bg-white border-[1px] border-black text-black rounded-full flex items-center justify-center gap-1 hover:bg-black hover:text-white duration-300">
-                <span>
-                  <GoPlus />
-                </span>
-                Details
-              </button>
+              <Link
+                href={{
+                  pathname: `product/${item._id}`,
+                  query: {
+                    _id: item._id,
+                    title: item.title,
+                    description: item.description,
+                    price: item.price,
+                    oldPrice: item.oldPrice,
+                    brand: item.brand,
+                    category: item.category,
+                    image: item.image,
+                    isNew: item.isNew,
+                  },
+                }}
+                as={`product/${item._id}`}
+              >
+                <button className="w-24 h-9 bg-white border-[1px] border-black text-black rounded-full flex items-center justify-center gap-1 hover:bg-black hover:text-white duration-300">
+                  <span>
+                    <GoPlus />
+                  </span>
+                  Details
+                </button>
+              </Link>
             </div>
             <div className="flex items-center gap-3">
               <p className="font-titleFont text-lg text-green-700 font-semibold">
